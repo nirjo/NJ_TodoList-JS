@@ -7,7 +7,7 @@ const filterTodo = document.querySelector(".filter-todo");
 // Event Listeners
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deletecheck);
-fileteOption.addEventListener('click', filterTodo);
+fileteOption.addEventListener('click', filtertodo);
 
 
 // Functions
@@ -22,6 +22,8 @@ function addTodo(event) {
         newTodo.innerText = todoInput.value;
         newTodo.classList.add('todo-item');
         todoDiv.appendChild (newTodo);
+// ADD TODO TO Local storage
+saveLocalTodos(todoInput.value);
      // Check MARK BUTTON
         const completedButton = document.createElement("button");
         completedButton.innerHTML= '<i class="fas fa-check"></i>';
@@ -65,6 +67,7 @@ function filterTodo(e) {
     todos.forEach (function(todo){
         switch(e.target.value){
             case "all":
+                todo.style.display ='flex';
                 break;
             case "completed":
                 if(todo.classList.contains('completed')) {
@@ -73,8 +76,27 @@ function filterTodo(e) {
                 }else {
                     todo.style.display ="no"
                 }
+                case "uncompleted":
+                    if(!todo.classList.contains('completed')) {
+                        todo.style.display ='flex';
+    
+                    }else {
+                        todo.style.display ="no"
+                    }
         }
     });
 }
 
+function saveLocalTodos(todo) {
+    // Check --- Hey do i already have thing in there?
+    let todos;
+    if (localStorage.getItem("todos") === null) {
+        todos =[];
+
+    }else {
+        todos = JSON.parse(localStorage.getItem("todos"));
+    }
+    todos.push(todo);
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
 
