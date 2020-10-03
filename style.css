@@ -4,15 +4,17 @@
     box-sizing: border-box;
   }
   body {
-    background-image: linear-gradient(120deg, #a57fa0 0%, #082962 100%);
+    margin:0;
+    padding:0;
+    animation: day2night 5s linear infinite;
+    min-height: 50vh;
     color: white;
     font-family: "Poppins", sans-serif;
-    min-height: 100vh;
-  }
-  header {
-    font-size: 2rem;
   }
   
+  header {
+    font-size: 5rem;
+  }
   header,
   form {
     min-height: 20vh;
@@ -20,6 +22,31 @@
     justify-content: center;
     align-items: center;
   }
+  /* Globe */
+
+@keyframes day2night
+{
+    0%
+    {
+        background: rgb(233, 84, 79);
+    }
+    10%
+    {
+        background: rgb(46, 184, 136);
+    }
+    50%
+    {
+        background: #e9f063;
+    }
+    70%
+    {
+        background: rgb(199, 202, 0);
+    }
+    100%
+    {
+        background: rgb(10, 0, 0);
+    }
+}
   form input,
   form button {
     padding: 0.5rem;
@@ -137,3 +164,46 @@
     transform: scale(1.5);
   }
   
+  /* Logo Animation */
+  * {
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+  }
+
+
+  #logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #logo path:nth-child(1) {
+    stroke-dasharray: 572 ;
+    stroke-dasharray: 572;
+    animation : line-anim 2s ease forwards;
+
+  }
+  #logo path:nth-child(2){
+    stroke-dasharray: 572 ;
+    stroke-dasharray: 572;
+  }
+  #logo path:nth-child(3){
+    stroke-dasharray: 572 ;
+    stroke-dasharray: 572;
+  }
+  #logo path:nth-child(4){
+    stroke-dasharray: 572 ;
+    stroke-dasharray: 572;
+
+  }
+  #logo path:nth-child(5){
+    stroke-dasharray: 572 ;
+    stroke-dasharray: 572;
+
+  }
+  #logo path:nth-child(6){
+    stroke-dasharray: 572 ;
+    stroke-dasharray: 572;
+
+  }

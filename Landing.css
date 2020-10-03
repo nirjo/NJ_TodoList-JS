@@ -1,0 +1,42 @@
+body
+{
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+    animation: day2night 15s linear infinite;
+
+}
+.circle
+{
+    position: relative;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 900px;
+    height: 700px;
+    animation:  animate 25s linear infinite;
+}
+
+@keyframes day2night
+{
+    0%
+    {
+        background: #fff;
+    }
+    10%
+    {
+        background: #fff;
+    }
+    50%
+    {
+        background: #00523f;
+    }
+    90%
+    {
+        background: #fff;
+    }
+    100%
+    {
+        background: #fff;
+    }
+}
